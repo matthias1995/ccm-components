@@ -329,7 +329,7 @@ ccm.component( {
 				var span = $("<span class='text' ></span>");
 				var itemDescription = $("<div class='itemDescription' ></div>");
 				span.text(ccm.helper.val(dataset.toDoList[i].text));
-				itemDescription.html(hightlightHyperLinks(ccm.helper.val(dataset.toDoList[i].desc)));
+				itemDescription.html(markupHyperLinks(ccm.helper.val(dataset.toDoList[i].desc)));
 				if(!self.state.expansion[dataset.toDoList[i].id])
 					itemDescription.hide();
 				li.find(".text").replaceWith(span);
@@ -340,7 +340,7 @@ ccm.component( {
 			}
 			
 			// ---------------------- highlight hyperlinks and embed images ---------------------
-			function hightlightHyperLinks(str){
+			function markupHyperLinks(str){
 				var reg = new RegExp(/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi);
 				var match = str.match(reg);
 				var res = "";
